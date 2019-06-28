@@ -51,4 +51,20 @@ describe('games router', () => {
                 .expect('Content-Type', /json/i);
         });
     });
+    describe('PUT request to /', () => {
+        it('should respond with 200 with updated changes', () => {
+            const data = { genre: 'FPS/BATTLE ROYALE' }
+            supertest(router)
+                .put('/1')
+                .send(data)
+                .expect(200)
+                .expect('Content-Type', /json/i);
+        });
+        it('should respond with 404 not found with non-existent id', () =>{
+            supertest(router)
+                .put('/7')
+                .expect(404)
+                .expect('Content-Type', /json/i);
+        });
+    });
 });
