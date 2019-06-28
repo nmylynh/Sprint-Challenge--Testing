@@ -1,7 +1,7 @@
 const express = require('express');
 const server = express();
 const configureMiddleware = require('./middleware/config-mw');
-// const games = require('./routers/games-router');
+const games = require('./routers/games-router');
 
 configureMiddleware(server);
 
@@ -10,6 +10,6 @@ server.get('/', (req, res) => {
   });  
 
 
-// server.use('/api/games', games);
+server.use('/api/games', games);
 
 module.exports = server;
