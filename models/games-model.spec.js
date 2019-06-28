@@ -91,7 +91,7 @@ describe('games model', () => {
     });
     describe('delete request, remove()', async () => {
         it('should delete the game', async () => {
-           //add
+           //add, length 3
             await add({ title: 'BloodBorne', genre: 'ACTION RPG', releaseYear: 2015 });
             await add({ title: 'Borderlands', genre: 'FPS/RPG', releaseYear: 2009 });
             await add({ title: 'ARK: Survival Evolved', genre: 'SURVIVAL RPG', releaseYear: 2017 });
